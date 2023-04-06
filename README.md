@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Blog feature on a react app using Dev.to as a Headless CMS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To fully understand this repository, I am assuming you are aware of the Headless CMS architecture and React.
 
-## Available Scripts
+## Headless CMS architecture
 
-In the project directory, you can run:
+Headless CMS is an approach to decouple where content is stored from where it is presented. I decided to build a portfolio application to show some of my previous work and skills. Thinking about the features present on this portfolio and, knowing that the software development career is <b> an endless road learning journey</b>, why not register things I was learning? Why not share this?
 
-### `npm start`
+I should write a blog and couple it with this portfolio, I thought...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The cheaper and best approach for this endeavor
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I had some decisions around the technology to take. Some points that were important to me, like:
 
-### `npm test`
+As little effort as possible: Didn't want to handle hosting or a full-featured headless CMS somewhere like a whole WordPress.org. I have plenty of work to do, <b>don't need to overenginnering this project</b>;
+Write posts in markdown: in case I decided to move content in the future, don't want to have to format everything again;
+- Distribute the content: Traffic is important, I want the content to be published on one platform that has traffic from developers;
+- Want the content available on my personal portfolio.
+- After considering the best and cheaper options available, I found DEV.to and decided to use it to store my articles.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The DEV.to API is open, which means I can easily use it and get that content into my portfolio without much effort. Posts are written in markdown and already have heavy traffic from other developers.
 
-### `npm run build`
+Decision made, time to get to work!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dev.to as Headless CMS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In this feature for my portfolio, my dev account performs the role of CMS, and the content is presented in a React App. In other words, the backend is powered by Dev.To , the frontend is made using ReactJs and is hosted on Vercel.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As I already had a portfolio running made using React, I had to create new components and routes to implement this 'articles' feature.
 
-### `npm run eject`
+The first step was to create the component Posts.js. On this component, we will use the React hooks useEffect and useState.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In the Posts.js component, we will get the data from Dev.to. I could use two different methods of making network requests: either Fetch or Axios. I decided to use Fetch, as you can see below:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+As everything is working as expected:
+  
+The result can be seen at my portfolio on articles page.
